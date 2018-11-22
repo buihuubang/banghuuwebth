@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nhập chữ</title>
+    <script>
+        function createXHR(){
+            var xhr = false;
+            if(window.XMLHttpRequest){
+                xhr = new XMLHttpRequest();
+            } else if(window.ActiveXObject){
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            return xhr;
+        }
+
+        var xhrObject = createXHR();
+        //Page 64
+        function event(){
+            var textBox = document.getElementById("textBox").value;
+            var btn = document.getElementById("btn");
+            var result = document.getElementById("result");
+            var requestStr = "xuly.php?name=" + encodeURIComponent(textBox);
+            // btn.onclick = function(){
+            //     if(textBox != "ABC"){
+            //         result.innerHTML = "Nhập sai tên";
+            //     } else
+            //         result.innerHTML = "Xin chào minh mặt l";
+            // }
+            xhrObject.open("GET",requestStr,true);
+            xhrObject.onreadystatechange = function(){
+                if(xhrObject.status == 200 && xhrObject.readyState == 4){
+                    var response = xhrObject.responseText;
+                    btn.onclick = function(){
+                        if(response == "1"){
+                            result.innerHTML = "Hế lô minh mặt l";
+                        } else {
+                            result.innerHTML = "Nhập sai tên";
+                        }
+                    }
+                }
+            }
+            xhrObject.send(null);
+        }
+        window.onload = event;
+    </script>
+</head>
+<body>
+    <input id="textBox" type="text"/>
+    <label id="result"></label><br/>
+    <input id="btn" type="button" value="Click me"/>
+</body>
+</html>

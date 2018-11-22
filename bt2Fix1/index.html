@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--AIzaSyCBT7ZHBL3cu_oXn-_TLm7xmlL_22DlJVI-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tìm Khu Vui Chơi</title>
+    <!--Chèn Bootstrap cho trang web-->
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Style/StylePage.css" rel="stylesheet">
+    <!--Chèn Google Map API vào-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6H9_J6vDS4EYgVDWK5JL7YpOu9u9Xxtw"></script>
+    <script type="text/javascript" src="Javascript/mapFix.js"></script>
+</head>
+<body>
+   
+    <div class="container-fluid" style="background:#CC99FF">
+        
+        <!--CHỨA TIÊU ĐỀ-->
+        <div class="row header">
+            <div class="col-sm center-block" style="text-align:center">
+                    <strong><span>TÌM KIẾM KHU VUI CHƠI</span></strong>
+            </div>
+        </div>
+
+        <!--CHỨA MENU-->
+        <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="min-width:100%;">
+                    <a class="navbar-brand" href="#">Vui chơi</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                      <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Giải nhiệt mùa hè</a>
+                        </li>
+                        <li class="nav-item active">
+                          <a class="nav-link" href="#">Tìm địa điểm vui chơi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mini Games</a>
+                        </li>
+                      </ul>
+                      <span class="navbar-text">
+                        Bạn có thể tìm và lưu địa điểm vui chơi
+                      </span>
+                    </div>
+                </nav>
+        </div>
+        
+        <!--CHỨA THANH TÌM KIẾM DẪN NGƯỜI DÙNG ĐẾN ĐIỂM MUỐN NHẬP-->
+        <!--align-items-center justify-content-center-->
+        <div class="row">
+            <div class="col-sm align-items-center justify-content-center Finder form-inline" style="min-height: 3em;line-height: 3em; text-align: center; background: #FF99CC;">
+                    <Strong>Nhập vị trí điểm bạn muốn đến:</Strong> &nbsp; &nbsp;
+                    <input type="text" id="findPlace" class="form-control" placeholder="Nhập vị trí đích" style="max-height:2em; max-width: 30%;"> &nbsp; &nbsp;
+                    <input type="button" id="FindRoute" class="btn btn-primary" value="Tìm đường" style="max-height:3em;"> &nbsp; &nbsp;
+                    <input type="button" id="RemoveRoute" class="btn btn-danger" value="Quay trở lại" > 
+            </div>
+        </div>
+        
+        <!--CHỨA NỘI DUNG, GỒM MAP VÀ FORM-->
+        <div class="row content align-middle">
+            <div class="col-sm-5 containForm" style="background:#CC99FF; text-align: center;">
+                <strong><h2>Lưu địa điểm</h2></strong><br/>
+                <input type="text" class="form-control" id="frmTitle" placeholder="Nhập tên địa điểm"><br/>
+                <input type="text" class="form-control" id="frmContent" placeholder="Nhập thông tin địa điểm"><br/>
+                <input type="text" class="form-control" id="frmLat" placeholder="Nhập vĩ độ"><br/>
+                <input type="text" class="form-control" id="frmLng" placeholder="Nhập kinh độ"><br/>
+                <input type="button" id="frmBtn" class="btn btn-success" value="Lưu vị trí"><br/><br/>
+                <div class="form-inline"> 
+                    <label>Khoảng cách:</label> &nbsp;
+                    <input type="text" class="form-control input-sm" id="khoangCach" style="max-width:30%;" placeholder="Khoảng cách" disabled><br/><br/>
+                </div>
+            </div>
+            <div class="col-sm-7 containMap">
+                <div id="mapHere" style="height:460px;"></div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

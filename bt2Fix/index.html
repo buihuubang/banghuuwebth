@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--AIzaSyCBT7ZHBL3cu_oXn-_TLm7xmlL_22DlJVI-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tìm Khu Vui Chơi</title>
+    <!--Chèn Bootstrap cho trang web-->
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Style/StylePage.css" rel="stylesheet">
+    <!--Chèn Google Map API vào-->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6H9_J6vDS4EYgVDWK5JL7YpOu9u9Xxtw"></script>
+    <script type="text/javascript" src="Javascript/mapFix.js"></script>
+</head>
+<body>
+   
+    <div class="container-fluid" style="background:#CC99FF">
+        
+        <!--CHỨA TIÊU ĐỀ-->
+        <div class="row header">
+            <div class="col-sm center-block" style="text-align:center">
+                    <span>TÌM KIẾM KHU VUI CHƠI</span>
+            </div>
+        </div>
+        
+        <!--CHỨA THANH TÌM KIẾM DẪN NGƯỜI DÙNG ĐẾN ĐIỂM MUỐN NHẬP-->
+        <div class="row">
+            <div class="col-sm Finder" style="min-height: 3em;line-height: 3em; text-align: center; background: #FF99CC;">
+                    <Strong>Nhập vị trí điểm bạn muốn đến:</Strong>
+                    <input type="text" id="findPlace" placeholder="Nhập vị trí đích" style="max-height:2em;">
+                    <input type="button" id="FindRoute" class="btn btn-primary" value="Tìm đường" style="max-height:3em;">
+                    <input type="button" id="RemoveRoute" class="btn btn-danger" value="Quay trở lại" >
+            </div>
+        </div>
+        
+        <!--CHỨA NỘI DUNG, GỒM MAP VÀ FORM-->
+        <div class="row content align-middle">
+            <div class="col-sm-5 containForm" style="background:#CC99FF; text-align: center;">
+                <strong><h2>Nhập địa điểm</h2></strong><br/><br/>
+                <input type="text" id="frmTitle" placeholder="Nhập tên địa điểm"><br/><br/>
+                <input type="text" id="frmContent" placeholder="Nhập thông tin địa điểm"><br/><br/>
+                <input type="text" id="frmLat" placeholder="Nhập vĩ độ"><br/><br/>
+                <input type="text" id="frmLng" placeholder="Nhập kinh độ"><br/><br/>
+                <input type="button" id="frmBtn" class="btn btn-success" value="Lưu vị trí">
+            </div>
+            <div class="col-sm-7 containMap">
+                <div id="mapHere"></div>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

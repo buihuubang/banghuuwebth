@@ -1,0 +1,4 @@
+create table shopstock( id int not null primary key AUTO_INCREMENT, name varchar(100) not null, descrip varchar(100) not null, price float not null, image varchar(100) not null )
+go
+INSERT INTO shopstock(name,descrip,price,image) VALUES ('sach toan','day la sach van',30.000,'sachtoan.jpg'),
+('sach anh','day la sach van',50.000,'sachanh.jpg')

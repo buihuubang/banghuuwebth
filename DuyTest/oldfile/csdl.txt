@@ -1,0 +1,14 @@
+﻿
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE IF NOT EXISTS `member` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  
+INSERT INTO `member` (`id`, `username`, `email`) VALUES
+(1, 'duy', 'duy@gmail.com'),
+(2, 'utxi', 'utxi@gmail.com'),

@@ -1,0 +1,43 @@
+html, body{
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 100%;
+}
+.header{
+    text-align: center;
+    background-color: #CC99FF;
+    font-size: 2em;
+    color: white;
+}
+
+.header p{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/*.Finder {
+    min-height: 2em;
+    text-align: center;
+    background: #CC99FF;
+}*/
+
+#findPlace{
+    border: none;
+}
+
+.containMap{
+    background: #CC99FF;
+}
+
+#mapHere{
+    width: 600px; 
+    height: 500px;
+    margin: 3% auto;
+}
+
+/*.containForm{
+    min-width: 20%;
+    background: #CC99FF;
+    margin: auto;
+}*/
